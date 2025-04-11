@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico');
+
+*, *:after, *:before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+}
+html{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+body {
+    background-color: #000;
+}
+
+/*******************Pre Loader *****************/
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+body.loaded .preloader {
+    display: none;
+}
+
+/****************************************************/
+.background{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+}
+#example {
+    padding-top: 5vh;
+    min-height: 100vh;
+    color: white;
+}
+a{
+    color: grey;
+}
+
+span{
+    color: #ff5000;
+}
+.topImg{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.topImg img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: left;
+}
+.word{
+    width: 100%;
+    filter: drop-shadow(1px 1px 1px white);
+    position: absolute;
+    top: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    z-index: 99;
+}
+.word img{
+    width: 40rem;
+}
+.number{
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 200px 0px 0px 0px;
+    z-index: 99;
+}
+.number>span{
+    font-family: 'Pacifico', cursive;
+    font-size: 175px;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #ff0000bd 0%, #e52e4d 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    padding: 10px 20px;
+    filter: drop-shadow(1px 1px 1px white);
+}
+.number .p{
+    padding-left: 40px;
+
+}
+.balloon {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+.balloon1,
+.balloon2,
+.balloon3,
+.balloon4 {
+    width: 5rem;  
+    height: 5rem; 
+    position: absolute;
+    z-index: 1;
+}
+
+.balloon1 {
+    top: 1rem;
+    left: 1rem;
+}
+.balloon1 img{
+    width: 5rem;
+    animation: updown 4s ease-in-out infinite;
+}
+.balloon2 {
+    top: 1rem;
+    right: 1rem; 
+}
+.balloon2 img{
+    width: 5rem;
+    animation: updown 4s ease-in-out infinite;
+}
+.balloon3 {
+    bottom: 8rem;
+    left: 1rem;
+}
+.balloon3 img{
+    width: 5rem;
+    animation: updown 4s ease-in-out infinite;
+}
+.balloon4 {
+    bottom: 8rem;
+    right: 1rem;
+}
+.balloon4 img{
+    width: 5rem;
+    animation: updown 4s ease-in-out infinite;
+}
+.bg_image{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    z-index: 5;
+}
+.bg_image .image1 img{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    border-radius: 10%;
+    width: 28rem;
+    overflow: hidden;
+    transform: rotate(-15deg);
+}
+.bg_image .image2 img{
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    border-radius: 10%;
+    width: 28rem;
+    overflow: hidden;
+    transform: rotate(15deg);
+}
+.scrolldown{
+    position: fixed;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+.scrolldown .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #ff6600 0%, #ff5000 40%, #ff3000 70%, #ff0000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    filter: drop-shadow(1px 1px 1px rgb(95, 95, 95));
+}
+.scrolldown .icon i{
+    color: white;
+    font-size: 20px;
+}
+.container{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: max-content;
+    padding-bottom: 10px;
+    z-index: 99;
+}
+.wish-box{
+    width: 90%;
+    border-radius: 10px;
+    border: 2px solid #ff5000;
+    min-height: 30vh;
+    margin: 10px 5%;
+}
+.wish-box p{
+    padding: 20px 15px;
+    font-size: 25px;
+    color: rgb(209, 209, 209);
+    font-family: 'Pacifico', cursive;
+}
+.contact{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact h2{
+    margin: 1rem auto;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    filter: drop-shadow(1px 1px 1px #444444);
+}
+.contact form{
+    width: 60%;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+ }
+ 
+ .contact form .input-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: white;
+ }
+ .contact form .input-box1,
+ .contact form textarea{
+    width:90%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    background-color: transparent;
+    border-radius: .8rem;
+    margin: .7rem 0;
+    color: white;
+    font-family: 'Pacifico', cursive;
+    height: 100px;
+    max-height: max-content;
+ }
+ 
+ .contact form .input-box1 {
+    width: 40%;
+    height: 30px;
+    max-height: fit-content;
+    outline: 1px solid white;
+ }
+ 
+ .contact form textarea{
+    box-sizing: border-box;
+    resize: none;
+    outline: 1px solid rgb(209, 209, 209);
+ }
+.btn {
+    display: inline-block;
+    padding: .3rem 2rem;
+    border-radius: 4rem;
+    background: transparent;
+    font-size: 1.4rem;
+    border: .2rem solid;
+    color: rgb(209, 209, 209);
+    letter-spacing: .1rem;
+    position: relative;
+    margin: 0 1.5rem 1.5rem 0;
+    font-weight: 600;
+    z-index: 10;
+    font-family: 'Pacifico', cursive;
+}
+ 
+.contact form .btn{
+    margin-top: .7rem;
+    cursor: pointer;
+}
+.contact form .btn:hover{
+    transition: 500ms ease-in-out;
+    background-color: #ff5000;
+    color: black;
+}
+
+.copyright{
+    color: rgb(209, 209, 209);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+.contact-me a{
+    margin: 0;
+    color: transparent;
+    text-decoration: none;
+}
+.btn>img{
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    background: rgb(209, 209, 209);
+}
+/****************************************/
+body.loaded .topImg img,
+body.loaded .word,
+body.loaded .number,
+body.loaded .balloon1,
+body.loaded .balloon2,
+body.loaded .balloon3,
+body.loaded .balloon4,
+body.loaded .scrolldown,
+body.loaded .bg_image .image1 img,
+body.loaded .bg_image .image2 img {
+    opacity: 0;
+    animation: none; /* Disable animations by default */
+}
+
+body.loaded .topImg img {
+    animation: decoration 2s ease-in-out 1s forwards;
+}
+body.loaded .word {
+    animation: animation 2s ease-in-out 1s forwards;
+}
+body.loaded .number {
+    animation: animation1 2s ease-in-out 1s forwards;
+}
+body.loaded .balloon1,
+body.loaded .balloon2{
+    animation: ball1 5s ease-in-out 1s forwards;
+}
+
+body.loaded .balloon3,
+body.loaded .balloon4 {
+    animation: ball3 5s ease-in-out 1s forwards;
+}
+body.loaded .scrolldown {
+    animation: animation 30s ease-in-out 1s forwards;
+}
+body.loaded .bg_image .image1 img {
+    animation: leftimg 2s ease-in-out 1s forwards;
+}
+body.loaded .bg_image .image2 img {
+    animation: rightimg 2s ease-in-out 1s forwards;
+}
+
+@keyframes glow {
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+@keyframes leftimg {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+      }
+      100% {
+        margin-left: 0;
+        opacity: 1;
+      } 
+}
+@keyframes rightimg {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+      }
+      100% {
+        margin-right: 0;;
+        opacity: 1;
+      } 
+}
+@keyframes ball1 {
+    0% {
+        top: 120vh;
+        opacity: 0;
+      }
+      100% {
+        top: 1rem;
+        opacity: 1;
+      } 
+}
+@keyframes ball3 {
+    0% {
+        bottom: -120vh;
+        opacity: 0;
+      }
+      100% {
+        bottom: 8rem;
+        opacity: 1;
+      } 
+}
+@keyframes updown {
+    0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(.6rem);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    
+}
+@keyframes animation {
+    0% {
+        margin-top: 0px;
+        opacity: 0;
+      }
+      100% {
+        margin-top: -200px;;
+        opacity: 1;
+      } 
+}
+@keyframes decoration {
+    0% {
+        margin-top: -200px;
+        opacity: 0;
+      }
+      100% {
+        margin-top: 0px;;
+        opacity: 1;
+      } 
+}
+@keyframes animation1 {
+    0% {
+        margin-top: 100px;
+        opacity: 0;
+      }
+      100% {
+        margin-top: 0;
+        opacity: 1;
+      } 
+}
+
+@keyframes slideball {
+    0% {
+        right: 0%;
+    }
+    40% {
+        right: 50%;
+        margin-right: -310px;
+    }
+    50% {
+        right: 50%;
+        margin-right: -200px;
+        top: 50%;
+    }
+    100% {
+        top: -100%;
+        right: 50%;
+    }
+}
+
+@media (max-width: 770px) {
+    html{
+        font-size: 50%;
+    }
+    .topImg img{
+        width: 200%;
+    }
+    .word{
+        padding: 30px;
+        font-size: 80px;
+        top: 40%;
+        left: 2%;
+    }
+    .number{
+        top: -10px;
+       left: 2.5%;
+        width: 95%;
+    }
+    .number>span{
+        font-size: 70px;
+        padding: 5px 6px;
+    }
+    .number .p{
+        padding-left: 10px;
+    }
+    .contact form{
+        width: 90%;
+    }
+    .btn {
+        padding: .6rem 2rem;
+    }
+    .bg_image .image1 img{
+        top: 6%;
+        left: 10%;
+    }
+    .bg_image .image2 img{
+        top: 61%;
+        right: 10%;
+    }
+    
+    .number span img {
+        width: 10rem;
+    }
+    .number .F img{
+        margin-left: -30px;
+    }
+    .number .R img{
+        margin-left: -35px;
+    }
+    .number .E1 img{
+        margin-left: -28px;
+    }
+    .number .E2 img{
+        margin-left: -34px;
+    }
+    .number .N img{
+        margin-left: -30px;
+    }
+    @keyframes animation {
+        0% {
+            margin-top: 0px;
+            opacity: 0;
+          }
+          100% {
+            margin-top: -120px;;
+            opacity: 1;
+          } 
+    }
+    @keyframes slideball {
+        0% {
+            right: 0%;
+        }
+        40% {
+            right: 77%;
+            margin-right: -290px;
+        }
+        50% {
+            right: 77%;
+            margin-right: -220px;
+            top: 53%;
+        }
+        100% {
+            top: -100%;
+            right: 71%;
+        }
+    }
+}
